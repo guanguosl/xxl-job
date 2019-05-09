@@ -1,0 +1,48 @@
+mybatis:
+    mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
+server:
+    context-path: ${WEB_PREFIX:/xxl-job-admin}
+    port: 8080
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        tomcat:
+            max-active: 30
+            max-wait: 10000
+            test-on-borrow: true
+            validation-interval: 30000
+            validation-query: SELECT 1
+        type: org.apache.tomcat.jdbc.pool.DataSource
+        url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/xxl-job?Unicode=true&characterEncoding=UTF-8
+        username: ${MYSQL_USER:root}
+        password: ${MYSQL_PASSWORD:root}
+    freemarker:
+        charset: UTF-8
+        request-context-attribute: request
+        settings:
+            number_format: 0.##########
+        suffix: .ftl
+        templateLoaderPath: classpath:/templates/
+    mail:
+        host: ${MAIL_HOST:smtp.qq.com}
+        port: ${MAIL_PORT:25}
+        username: ${MAIL_USERNAME:''}
+        password: ${MAIL_PASSWORD:''}
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+                        required: true
+    mvc:
+        static-path-pattern: /static/**
+    resources:
+        static-locations: classpath:/static/
+xxl:
+    job:
+        accessToken: ${ACCESS_TOKEN:''}
+        i18n: ''
+        login:
+            username: ${LOGIN_USERNAME:admin}
+            password: ${LOGIN_PASSWORD:123456}

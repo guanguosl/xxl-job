@@ -1,0 +1,19 @@
+version: "3"
+services:
+  thanks-xxl-job-admin:
+    image: registry.cn-hangzhou.aliyuncs.com/mt23/xxl-job-admin:2.0.2
+    environment:
+       MYSQL_HOST: 192.168.2.107
+#       MYSQL_PORT: 3306
+#       MYSQL_USER: root
+       MYSQL_PASSWORD: mysql1
+       LOGIN_USERNAME: admin
+       LOGIN_PASSWORD: 1234567
+#       WEB_PREFIX: /xxl-job-admin
+#       MAIL_HOST: ''
+#       MAIL_PORT: ''
+#       MAIL_USERNAME: ''
+#       MAIL_PASSWORD: ''
+#       ACCESS_TOKEN: ''
+    ports:
+      - "8080:8080"
